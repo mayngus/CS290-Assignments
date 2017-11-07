@@ -1,0 +1,130 @@
+
+/* This is a CSS rule */
+/* This is an element selector, selecting all elements in html file */
+body {
+  margin: 50px;
+}
+
+p {
+  color: red;
+}
+
+/* main article div.social-buttons .facebook-button a span {
+  phsycolmatic complexity?
+  if(span)
+    if(in a)
+      if(in .facebook-button)
+        if(in div.---)
+          ...
+    more complexity makes it harder to maintain code
+
+    instead of this, invent a class like .facebook-btn-link-text{}
+
+} */
+
+/* This conflitcs with p
+    will get set to orange instead of red */
+p.first-p{
+  color: orange;
+}
+
+em {
+  color:blue;
+}
+
+/* More specific selcting */
+.very-first-p {
+  font-size: 50px;
+}
+
+.first-p {
+  background-color: green;
+}
+
+/* ID selector */
+#opening-div {
+  border: solid 5px oransge;
+}
+
+/* Combining Selectors */
+/* Ex. If want to select em thats an ancestor to
+    strong */
+strong em {
+  text-decoration: underline;
+}
+
+em .first-p {
+ border: solid 5px red;
+}
+
+strong.first-p{
+   font-size: 30spx;
+}
+
+/* Look at notebook notes for definitions */
+div > em, .very-first-p {
+  color: black;
+}
+
+#elem-2 + li {
+  border: solid 5px purple;
+}
+
+/* DAY 2 TO CSS */
+/* Width changes width, height changes height,
+    padding changes ring within border but ouside content,
+    border changes border, margin pushes things away from it
+    border-radius rounds edges (50%  of height is max)
+    inline makes everything run next ot each other (no blocks)
+    black turns anything to block elements,
+    inline-block is a hybrid
+    */
+.outer-box {
+  width: 300px;
+  height:200px;
+  padding: 20px;
+  border: 2px solid black;
+  margin: 10px;
+  border-radius: 5%;
+  background-color: rgba(0, 0, 0, 0.1);
+
+   display: inline-block;
+
+}
+
+.inner-box{
+  /* max-width: 150px; */
+  margin: 10px 40px;
+  padding: 5px 20px 0 100px;
+  border-left: 1px solid gray;
+}
+
+/* Changes inline em text to block text */
+em {
+  display: block;
+}
+
+/* Styling Text */
+/*this is going to change the whole file's  text*/
+body {
+  /* sequential text types are fallbacks */
+  /* font-family: "Helvetica Neue", Helvetica, sans-serif; */
+
+
+  /*serif fonts have lines at the end of each letter
+      sans-serifs getings lines at end of letters */
+  font-family: sans-serif;
+
+  /* font-family: serif;
+  font-family: monospace; */
+  /* DONT USE THESE
+  font-family: cursive;
+  font-family: fantasy; */
+
+  /*FONTS FROM GOOGLE FONTS*/
+  /*font-family: 'Zilla Slab', serif;*/
+}
+
+
+
+/* DAY 3 */

@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-basics",
+  "version": "1.0.0",
+  "description": "A simple node.js package",
+  "main": "jsSERVER.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Greg",
+  "license": "MIT"
+}

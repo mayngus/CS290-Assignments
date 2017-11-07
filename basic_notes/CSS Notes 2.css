@@ -1,0 +1,219 @@
+body {
+
+  font-family: 'Zilla Slab', serif;
+}
+
+.orangish { /* Color Uses */
+
+  /*color: red;*/
+  /*color: rgb(255, 128, 0);*/
+  /*color: rgba(255, 128, 0, 0.5);  a determines opacity (takes in 0-1)  */
+  color: #ff8000;
+}
+
+.larger { /*Font Sizes*/
+
+  /*font-size: 200%;*/
+  font-size: 24px; /*most preferable for absolute and pixels*/
+  /*font-size: 2em; /* twice the width of the letter m (relitive size)*/
+  /*font-size: 28pt;*/
+  /*font-size: 25vw; /*25% of the viewport width, changes as window changes (can use vh for height) */
+}
+
+.bold { /*Font Weights*/
+
+  /*font-weight: bold;*/
+  /*font-weight: bolder; /*only some fonts support this*/
+  /*font-weight: light;*/
+  /*font-weight: 100; /*depends on font but goes in 100s from 100-900 (400 is normal) */
+}
+
+.italic{ /*Font Styles*/
+
+  font-style: italic;
+  /*font-style: none;*/
+}
+
+.lots-of-things {
+
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-shadow: 5px 5px 2px rgba(0,0,0,0.25); /*(x-offset, y-offset, radius of blur (higher number = more blury), rgba) (down, right) */
+  text-align: center;
+  line-height: 5; /* x times the height of a line (can use pixels, also try to just use padding etc.) */
+}
+
+a {
+  text-decoration: none; /*gets rid of underline under link*/
+}
+
+
+
+
+/*DAY 4*/
+/*Positioning*/
+.outer {
+  width: 300px;
+  height: 300px;
+  border: 5px solid black;
+  background-color: green;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.positioned-inner{
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  background-color: orange;
+}
+
+.unpositioned-inner{
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  background-color: grey;
+}
+
+/*Relative- positioned relative to its div*/
+.relative{
+  position: relative;
+  top: 50px;
+  left: 25px;
+}
+
+/*Makes the outer realtive class not move*/
+.outer.relative{
+  top: 0px;
+  left: 0px;
+}
+
+/*Absolute- positioned relative to the whole page*/
+.absolute{
+  position: absolute;
+  top: 100px;
+  left: 25px;
+}
+
+/*Fixed- works like absolute but it doesn't move in viewport*/
+.fixed{
+  position: fixed;
+  top: 50px;
+  right: 25px;
+}
+
+
+
+
+
+/*Psuedo Classes and Elements*/
+/*.someclass: class {}*/
+
+.with-hover:hover{
+  background-color: #a5e697;
+}
+
+a:focus {
+  background-color: #edbe62;
+}
+a::selection{
+  background-color: red;
+}
+
+a::after{
+  content: ""
+}
+
+li:first-child{
+  color: blue;
+}
+li:last-child{
+  color: yellow;
+}
+
+/*Psuedo Elements*/
+a::after{
+  content ="LOL";
+}
+
+p::first-letter{
+  font-size: 24px;
+  font-family: cursive;
+}
+
+
+
+
+/*Advanced boxes*/
+
+.box{
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+  box-shadow: 5px 10px 15px rgba(0,0,0,.25);
+  border-radius: 15px;
+
+  cursor: pointer;
+}
+
+
+
+
+
+/*DAY 5*/
+/*Flex Boxs*/
+
+/*Flex Container*/
+.container{
+  margin: 5px;
+  padding: 10px;
+  border: 4px solid black;
+
+  display: flex;
+
+  /*Changes what direction to use for boxes*/
+  flex-direction: row;
+  /*flex-direction: column;*/
+  /*flex-direction: row-reverse;*/
+  /*flex-direction: column-reverse;*/
+
+/*If there is not enough apce it will make boxes wrap*/
+  flex-wrap: wrap;
+
+  /*how stuff is layed out in main axis*/
+  /*pushes stuff towards main end*/
+  /*justify-content: flex-end;*/
+
+  /*center things along main axis*/
+  /*justify-content: center;*/
+
+  /*equal space btwn boxes, btwn or around*/
+  justify-content: space-between;
+
+
+/*how stuff is layed out in cross axis*/
+  /*align-items: flex-end;*/
+
+}
+
+/*Flex Items within container*/
+.boxx{
+  min-width: 200px;
+  min-height:200px;
+  background-color: green;
+  border: 2px solid black;
+
+/*FIlls in empty space*/
+  /*flex-grow: 1;*/
+
+/*Initial space it will take up*/
+  /*flex-basis: 20%;*/
+
+/*Does the same thing as previous two items plus min-width*/
+  /*flex: 1 200px;*/
+
+}
+
+.bigger{
+  /*flex-grow: 3;*/
+}

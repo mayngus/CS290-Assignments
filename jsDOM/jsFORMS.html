@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS Event Handling</title>
+    <link rel="stylesheet" href="jsFORM.css">
+
+    <script src="jsFORM.js" charset="utf-8" defer></script>
+  </head>
+
+<body>
+
+  <form class="options-form">
+    <div class="input-container">
+      <label for="words-input">Words</label>
+      <textarea name="words-input" id="words-input"></textarea>
+    </div>
+
+    <div class="input-container">
+      <label for="every-nth-select">Highlight every n'th</label>
+      <select id="every-nth-select">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option selected>4</option>
+        <option>5</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <fieldset id="highlight-color">
+        <legend>Highlight color</legend>
+        <div>
+          <label for="highlight-color-red">Red</label>
+          <input type="radio" name="highlight-color" id="highlight-color-red" value="red" checked>
+        </div>
+
+        <div>
+          <label for="highlight-color-green">Green</label>
+          <input type="radio" name="highlight-color" id="highlight-color-green" value="green">
+        </div>
+
+        <div>
+          <label for="highlight-color-blue">Blue</label>
+          <input type="radio" name="highlight-color" id="highlight-color-blue" value="blue">
+        </div>
+      </fieldset>
+    </div>
+
+  </form>
+
+
+  <section class="container">
+    <div class="button-container">
+      <button class="add-word-button">+</button>
+    </div>
+    <div class="words-container">
+
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="button-container">
+      <button class="add-word-button">+</button>
+    </div>
+    <div class="words-container">
+
+    </div>
+  </section>
+</body>
+</html>
