@@ -1,2 +1,5 @@
 # CS290-Notes
-Notes taken during the course CS290
+These are personal notes taken during the course computer science 290 at Oregon State University.
+This will not be useful to others.
+
+
