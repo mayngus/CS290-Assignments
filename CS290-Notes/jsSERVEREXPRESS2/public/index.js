@@ -7,27 +7,32 @@ function createPhotoCard(photoURL, caption) {
     caption: caption,
   };
 
-  var photoCardHTML = photoCardTemplate(photoCardTemplateArgs);
+
+//This does all the work below but just from template
+  var photoCardHTML = Handlebars.templates.photoCard(photoCardTemplateArgs);
   console.log("== photoCardHTML", photoCardHTML);
 
-  var photoCardSection = document.createElement('section');
-  photoCardSection.classList.add('photo-card');
 
-  var imgContainerDiv = document.createElement('div');
-  imgContainerDiv.classList.add('img-container');
-  photoCardSection.appendChild(imgContainerDiv);
+  return photoCardHTML;
 
-  var img = document.createElement('img');
-  img.classList.add('person-photo-img');
-  img.src = photoURL;
-  imgContainerDiv.appendChild(img);
-
-  var captionDiv = document.createElement('div');
-  captionDiv.classList.add('caption');
-  captionDiv.textContent = caption;
-  photoCardSection.appendChild(captionDiv);
-
-  return photoCardSection;
+  // var photoCardSection = document.createElement('section');
+  // photoCardSection.classList.add('photo-card');
+  //
+  // var imgContainerDiv = document.createElement('div');
+  // imgContainerDiv.classList.add('img-container');
+  // photoCardSection.appendChild(imgContainerDiv);
+  //
+  // var img = document.createElement('img');
+  // img.classList.add('person-photo-img');
+  // img.src = photoURL;
+  // imgContainerDiv.appendChild(img);
+  //
+  // var captionDiv = document.createElement('div');
+  // captionDiv.classList.add('caption');
+  // captionDiv.textContent = caption;
+  // photoCardSection.appendChild(captionDiv);
+  //
+  // return photoCardSection;
 
 }
 
@@ -43,7 +48,22 @@ function handleModalAcceptClick() {
 
     var newPhotoCard = createPhotoCard(photoURL, caption);
     var photoCardContainer = document.querySelector('.photo-card-container');
-    photoCardContainer.appendChild(newPhotoCard);
+
+    //Can no longer do this as what we are returning is a string and not a DOM element
+    //photoCardContainer.appendChild(newPhotoCard);
+
+    //insertAdjacentHTML(where, html)
+    //where: 'before begin', 'after begin', 'before end', 'after end'
+    //Ex.
+    // 1
+    // <div>
+    //  2
+    //  content
+    //  3
+    // <div>
+    // 4
+    photoCardContainer.insertAdjacentHTML('beforeend', newPhotoCard);
+
     hideModal();
 
   }
@@ -102,6 +122,6 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   //photocard elem using templates
-  var photoCardTemplateElem = document.getElementById('photo-card-template');
-  photoCardTemplate = Handlebars.compile(photoCardTemplateElem.innerHTML); //needs to be compiled so it can be called later
+  // var photoCardTemplateElem = document.getElementById('photo-card-template');
+  // photoCardTemplate = Handlebars.compile(photoCardTemplateElem.innerHTML); //needs to be compiled so it can be called later
 });

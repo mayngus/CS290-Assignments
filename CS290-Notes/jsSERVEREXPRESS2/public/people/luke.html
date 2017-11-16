@@ -8,13 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
     <link rel="stylesheet" href="/style.css">
 
-    <!-- host for handlebar -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js" charset="utf-8" defer></script>
-
-
     <!--handlebar templating -->
     <!-- this is bad practice to do it like this -->
-    <script id = "photo-card-template" type="text/x-handlebars-template">
+    <!-- <script id = "photo-card-template" type="text/x-handlebars-template">
       <section class="photo-card">
         <div class="img-container">
           <img class="person-photo-img" src="{{photoURL}}" />
@@ -23,8 +19,13 @@
           {{caption}}
         </div>
       </section>
-    </script>
+    </script> -->
 
+    <!-- host for handlebar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" charset="utf-8" defer></script>
+    <script src="/photoCardTemplate.js" charset="utf-8" defer></script>
+
+    
     <script src="/index.js" charset="utf-8" defer></script>
   </head>
   <body>
