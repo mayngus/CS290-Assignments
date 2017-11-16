@@ -1,0 +1,196 @@
+/*
+ * Name: Gregory Sanchez
+ * File: CSS file for Benny's Page
+ * Date: 10-16-2017
+ */
+
+header {
+	font-family: 'Roboto Slab', serif;
+	height: 150px;
+
+	background-color: black;
+}
+
+body {
+	margin: 0px;
+	font-family: 'Roboto', serif; 
+	font-weight: bold;
+}
+
+.header-image-container{
+	display: inline-block;
+	width: 150px;
+	max-height: 150px;
+}
+
+.site-title {
+	display: inline;
+	position: relative;
+	top: -35px;
+	bottom: 0px;
+	font-size: 100px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	display: inline;	
+}
+
+
+/* 
+ * Following style is for the entire Filter container
+ */
+.filter-container {
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	left: 10px;
+	width: 220px;
+	height: 425px;
+	margin 5px;
+	padding: 0px 10px 0px 10px;
+	border-radius: 1%;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filter-input-container{
+	
+	margin: 5px;
+ 	padding: 5px 5px 5px 5px;
+}
+
+#filter-text {
+	width: 150px;
+
+}
+ 
+#filter-min-price {
+	margin: 5px;
+	width: 60px;
+}
+
+#filter-max-price {
+	margin: 5px;
+	width: 60px;
+}
+
+#filter-city {
+	margin: 5px;
+	width: 150px;
+}
+
+#filter-update-button {
+	margin: 0px 10px;
+	width: 200px;
+	height: 50px;
+	color: white;
+	border: none;
+	background-color: black;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+/* Hover effect for the update button in the filter contents */
+#filter-update-button:hover {
+	background-color: #ffcc99;
+	cursor: pointer;
+	border: 1px solid black;
+}
+
+
+/* 
+ * Following style is for the entire item list 
+ */
+#results {
+	margin: 0px 20px;
+	padding 10px;
+	position: absolute;
+
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.result {
+	margin: 10px;
+	padding 5px;
+	width: 375px;
+	height: 350px;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+
+.result-contents {
+	width: 365px;
+	height: 340px;
+	margin: 5px;
+}
+
+img {	
+	display: block;
+	margin: 0px auto;
+	max-width: 345px;
+	max-height: 300px;	
+}
+
+.result-image-container {
+	position: relative;
+	margin: 5px auto 5px auto;
+	padding: 5px;
+	max-width: 375px;
+	max-height: 300px;
+}
+
+.result-info-container {
+	margin: 10px;
+	max-width: 380px;
+	max-height: 200px;
+}
+
+.result-title{
+	color: #ff9900;
+}
+
+/* Hover effect: underline the item's name */
+.result-title:hover {
+	text-decoration: underline;
+}
+
+.result-price {
+	display: inline-block;
+	margin: 5px 0px 0px 0px;
+	padding: 5px;
+	background-color: #f2f2f2;
+	border: 1px solid #b3b3b3;
+	border-radius: 5px;
+}
+
+
+/*
+ * Following style is for the button that is fixed on the bottom right 
+ */
+#sell-something-button {
+	position: fixed;
+	height: 60px;
+	width: 60px;
+	bottom: 25px;
+	right: 25px;
+	background-color: #ff8533;
+	border: none;
+	border-radius: 50%;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fa {
+	display: inline;
+	font-size: xx-large;
+	color: white;
+}
+
+/* Hover effect for the fixed button */
+#sell-something-button:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
