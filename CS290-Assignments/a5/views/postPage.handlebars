@@ -1,0 +1,21 @@
+{{#if this.price}}
+  {{> post}}
+{{else}}
+  <main class="content">
+
+    {{> filter}}
+
+    <section id="posts">
+
+      {{#each this}}
+        {{#if this.price}}
+          {{> post}}
+        {{/if}}
+      {{/each}}
+
+    </section>
+
+  </main>
+
+  {{> modal}}
+{{/if}}

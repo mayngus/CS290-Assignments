@@ -1,0 +1,58 @@
+[
+  {
+    "price": 500,
+    "city": "Eugene",
+    "condition": "poor",
+    "photoURL": "https://cnet4.cbsistatic.com/img/xTXdUEQEBqoDx74pbwCcpUc1XFQ=/fit-in/370x0/2017/01/18/c68ae3ac-6795-4d38-91e9-ec3e4fbffd6c/9401078c315052fc72a74b.jpg",
+    "description": "Super nice laptop"
+  },
+  {
+    "price": 20,
+    "city": "Corvallis",
+    "condition": "excellent",
+    "photoURL": "http://www.bendbulletin.com/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=nT08h69xtGPI_1rYp2vMZ8$daE2N3K4ZzOUsqbU5sYvcgrKwveORUjiMjWvNLIHiWCsjLu883Ygn4B49Lvm9bPe2QeMKQdVeZmXF$9l$4uCZ8QDXhaHEp3rvzXRJFdy0KqPHLoMevcTLo3h8xh70Y6N_U_CryOsw6FTOdKL_jpQ-&CONTENTTYPE=image/jpeg",
+    "description": "Platypus Trophy"
+  },
+  {
+    "price": 100,
+    "city": "Portland",
+    "condition": "new",
+    "photoURL": "http://static-21.sinclairstoryline.com/resources/media/9e359e52-2d79-4aa6-a43b-2ba534b9db0c-large16x9_378b19aa394049a4a9ca7101e4e75be4voodoodoughnutrecord660.jpg?1463527394583",
+    "description": "Very large pile of interesting donuts"
+  },
+  {
+    "price": 250,
+    "city": "Salem",
+    "condition": "fair",
+    "photoURL": "http://static.legalsolutions.thomsonreuters.com/product_photos/p40307624-141728L.jpg",
+    "description": "Oregon laws"
+  },
+  {
+    "price": 1,
+    "city": "Bend",
+    "condition": "new",
+    "photoURL": "http://i.huffpost.com/gen/1573833/images/o-SUNSHINE-facebook.jpg",
+    "description": "Sunshine"
+  },
+  {
+    "price": 99,
+    "city": "Portland",
+    "condition": "fair",
+    "photoURL": "https://az616578.vo.msecnd.net/files/2016/05/21/6359939006070313161632155840_hipsters.jpg",
+    "description": "Hipsters"
+  },
+  {
+    "price": 20000000,
+    "city": "Eugene",
+    "condition": "good",
+    "photoURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/102707-Oregon-AutzenStadium-ext.jpg/1200px-102707-Oregon-AutzenStadium-ext.jpg",
+    "description": "Football stadium (we kind of want to build a new one)"
+  },
+  {
+    "price": 10000,
+    "city": "Corvallis",
+    "condition": "excellent",
+    "photoURL": "https://farm2.staticflickr.com/1258/1366422925_25663f44c8_z.jpg",
+    "description": "Very nice farmer's market"
+  }
+]
