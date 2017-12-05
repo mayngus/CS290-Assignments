@@ -30,20 +30,46 @@ app.get('/', function (req, res) {
 });
 
 app.get('/people', function (req, res) {
-  res.status(200).render('peoplePage', {
-    people: peopleData
+  var peopleDataCollection = mongoConnection.collection('peopleData');
+  peopleDataCollection.find({}).toArray(function (err, results) {  //specifies all data and transforms it into an array
+      if(err) {
+        res.status(500).send("Error fetching people from database");
+      } else {
+        console.log("== query results:", results);
+        res.status(200).render('peoplePage', {
+          people: results;
+        });
+      }
   });
+
+  // res.status(200).render('peoplePage', {
+  //   people: peopleData
+  // });
 });
 
 app.get('/people/:personId', function(req, res, next) {
-  var personId = req.params.personId;
-  if (peopleData[personId]) {
-    var person = peopleData[personId];
-    res.status(200).render('personPage', person);
-  }
-  else {
-    next();
-  }
+  var peopleDataCollection = mongoConnection.collection('peopleData');
+
+  peopleDataCollection.find({personId: req.params.personId}).toArray(function (err, results) {  //specifies all data and transforms it into an array
+      if(err) {
+        res.status(500).send("Error fetching person from database");
+      } else if (results.length > 0) {
+
+        res.status(200).render('personPage', {
+          people: results[0]; //assuming index 0 is the correct person
+        });
+      } else {
+        next();
+      }
+  });
+
+  // if (peopleData[personId]) {
+  //   var person = peopleData[personId];
+  //   res.status(200).render('personPage', person);
+  // }
+  // else {
+  //   next();
+  // }
 });
 
 app.use(express.static('public'));
@@ -54,19 +80,43 @@ app.get('*', function (req, res) {
 
 /* STARTING TO USE POSTS */
 app.post('/people/:personId/addPhoto', function(req, res, next) {
-  var personId = req.params.personId;
-  if(peopleData[personId]) {
-    console.log("== request body:", req.body);
-    peopleData[personId].photos.push({
+
+  if(req.body && req.body.photoURL) {
+    var peopleDataCollection = mongoConnection.collection('peopleData');
+    var photoObj = {
       photoURL: req.body.photoURL,
       caption: req.body.caption
-    });
-    console.log("== new person data:", peopleData[personId]);
-    res.status(200).send("Success");
+    };
+
+    peopleDataCollection.updateOne(
+      {personId: req.params.personId},
+      { $push: {photos: photoObj} },
+      function(err, result) {
+        if(err){
+          res.status(500).send("Error fetching person from database");
+        } else {
+          res.status(200).send("Sucess");
+        }
+      }
+    );
+  } else {
+    res.status.send("Request body needs a 'photoURL' filed.")
   }
-  else {
-    next();
-  }
+
+
+  // var personId = req.params.personId;
+  // if(peopleData[personId]) {
+  //   console.log("== request body:", req.body);
+  //   peopleData[personId].photos.push({
+  //     photoURL: req.body.photoURL,
+  //     caption: req.body.caption
+  //   });
+  //   console.log("== new person data:", peopleData[personId]);
+  //   res.status(200).send("Success");
+  // }
+  // else {
+  //   next();
+  // }
 });
 
 app.post('*', function(req, res){
